@@ -33,13 +33,76 @@
         <section><h1>Exercises</h1></section>
         <section id="first-web-component">
             <section>
-                <h3>Your First Web Component (1/4)</h3>
+                <h3>Your First Web Component (1/7)</h3>
                 <ol>
-                    <li>Go to <span class="monospace highlight">number-input.html</span> and replace the <span class="monospace highlight">h2</span> element with the <span class="monospace highlight">input</span> one of <span class="monospace highlight">type text</span>.</li>
-                    <li>Add <span class="monospace highlight">_internalValue</span> and <span class="monospace highlight">_internalClass</span> properties (both of type <span class="monospace highlight">String</span>) to the object returned by <span class="monospace highlight">NumberInput.properties()</span> static method.</li>
-
+                    <li>Go to <span class="monospace highlight">number-input.html</span>.</li>
+                    <li>Replace the <span class="monospace highlight">prop1</span> property with the <span class="monospace highlight">_internalValue</span> one of type <span class="monospace highlight">String</span>. Properties are located in the object returned by <span class="monospace highlight">NumberInput.properties()</span> static method.</li>
+                    <li>Add the <span class="monospace highlight">input</span> element of <span class="monospace highlight">type text</span> just underneath the <span class="monospace highlight">h2</span> element.</li>
+                    <li>Change the one way binding within the <span class="monospace highlight">h2</span> element from <span class="monospace highlight">prop1</span> to the <span class="monospace highlight">_internalValue</span> just created.</li>
                 </ol>
             </section>
+            <section>
+                <h3>Your First Web Component (2/7)</h3>
+                <ol>
+                    <li>Add two way data binding of the <span class="monospace highlight">_internalValue</span> property to the <span class="monospace highlight">value</span> property of the <span class="monospace highlight">input</span> element. Because it is a non-Polymer element specify the <span class="monospace highlight">input</span>
+                        event in the binding as described <a href="https://www.polymer-project.org/2.0/docs/devguide/data-binding#two-way-native" target="_blank">here</a>.</li>
+                    <li>Add the <a href="https://www.polymer-project.org/2.0/docs/devguide/events#annotated-listeners" target="_blank">annotated</a> <span class="monospace highlight">blur</span> event listener to the <span class="monospace highlight">input</span> element. If the event occur, the <span class="monospace highlight">NumberInput.validateAndFormat</span> method should be called.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your First Web Component (3/7)</h3>
+                <p style="text-align: left">Implement the <span class="monospace highlight">NumberInput.validateAndFormat</span> method:</p>
+                <ol>
+                    <li>Remove the thousands separators (<span class="monospace highlight">,</span>) from the <span class="monospace highlight">_internalValue</span> property and
+                        parse it using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat" target="_blank" class="monospace">parseFloat()</a> function.</li>
+                    <li>Test if parsing was successful using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank" class="monospace">isNaN()</a> function.</li>
+                    <li>Use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed" target="_blank" class="monospace">Number.prototype.toFixed()</a> method to add the decimal separator (<span class="monospace highlight">.</span>).</li>
+                    <li>Use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" class="monospace">String.prototype.replace()</a> method to add the thousands separators (<span class="monospace highlight">,</span>).
+                        Hint: <span class="monospace highlight">/(\d)(?=(\d{3})+\.)/g</span> matches digits which are followed by at least one 3-digits package and the decimal separator (<span class="monospace highlight">.</span>)</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your First Web Component (4/7)</h3>
+                <ol>
+                    <li>Add the <span class="monospace highlight">_internalClass</span> property of type <span class="monospace highlight">String</span></li>
+                    <li>Add the one way binding of the <span class="monospace highlight">_internalClass</span> property to the <span class="monospace highlight">class</span> attribute
+                        of the <span class="monospace highlight">input</span> element as described <a target="_blank" href="https://www.polymer-project.org/2.0/docs/devguide/data-binding#attribute-binding">here</a>.</li>
+                    <li>Update the <span class="monospace highlight">NumberInput.validateAndFormat</span> method so that it sets the <span class="monospace highlight">'invalid'</span> value
+                        to the <span class="monospace highlight">_internalClass</span> property if validation failed and resets the property (to <span class="monospace highlight">''</span>) if parsing was successful.</li>
+                    <li>Add CSS styling setting the <span class="monospace highlight">input</span>'s border color to <span class="monospace highlight">red</span> if the element has the <span class="monospace highlight">invalid</span> class.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your First Web Component (5/7)</h3>
+                <ol>
+                    <li>Add the <a target="_blank" href="https://www.polymer-project.org/2.0/docs/devguide/data-system#data-flow-control">notifying</a> <span class="monospace highlight">value</span> property of type <span class="monospace highlight">Number</span>.</li>
+                    <li>Add an observer to the <span class="monospace highlight">value</span> property calling <span class="monospace highlight">_valueChanged</span> method.</li>
+                    <li>It converts a new number value (passed as an argument) to string, assigns it to the
+                        <span class="monospace highlight">_internalValue</span> property and calls the <span class="monospace highlight">NumberInput.validateAndFormat</span> method.</li>
+                    <li>Update the <span class="monospace highlight">NumberInput.validateAndFormat</span> method so that it sets the <span class="monospace highlight">value</span> property with the parsed number value (of type Number) if parsing was successful or with
+                        <span class="monospace highlight">null</span> if parsing failed.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your First Web Component (6/7)</h3>
+                <ol>
+                    <li>Rather than setting the <span class="monospace highlight">input</span>'s border color to <span class="monospace highlight">red</span> expose the color as the
+                        <span class="monospace highlight">--invalid-input-border-color</span> CSS variable using the <a class="monospace" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">var()</a> CSS function (leave <span class="monospace highlight">red</span> as the default).</li>
+                    <li>Go to <span class="monospace highlight">demo\index.html</span> and add a <span class="monospace highlight">&lt;style&gt;</span> element to the document head. Put CSS styling there which sets the <span class="monospace highlight">--invalid-input-border-color</span> CSS variable.
+                        An example can be found <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">here</a></li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your First Web Component (7/7)</h3>
+                <ol>
+                    <li>Add a <span class="monospace highlight">&lt;script&gt;</span> element to the document body. Put JavaScript code there which sets the <span class="monospace highlight">value</span> property of the <span class="monospace highlight">&lt;number-input&gt;</span> element.</li>
+                    <li>Because the <span class="monospace highlight">value</span> is a <a target="_blank" href="https://www.polymer-project.org/2.0/docs/devguide/data-system#data-flow-control">notifying</a> property, the <span class="monospace highlight">value-changed</span>
+                        event is fired on a property change as described <a href="https://www.polymer-project.org/2.0/docs/devguide/data-system#change-events">here</a>. Add an event listener to the <span class="monospace highlight">&lt;number-input&gt;</span> element which prints a new value to the console.</li>
+                    <li>Hint: use the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" class="monospace">Document.querySelector()</a> method to get a reference to the <span class="monospace highlight">&lt;number-input&gt;</span> element
+                    and the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" class="monospace">EventTarget.addEventListener()</a> method to add an event listener.</li>
+                </ol>
+            </section>
+
         </section>
     </div>
 </div>
