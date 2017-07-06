@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'sw-precache'
+
+block title
+        |  SW-precache
+block content    
+          
+        p
+           a(href="https://github.com/GoogleChrome/sw-precache", target="_blank")
+             | Github
+        ul
+          li.fragment
+            | generates service worker code that will precache specific resources so they work offline.
+          li.fragment
+            | buildtime tool                            
+          li.fragment
+            | makes managing PWA cache easier
+          li.fragment
+            | integrates with sw-toolbox  

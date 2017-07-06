@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'network-first'
+
+block title
+        |  Network first
+block content       
+       img(src="img/network-falling-back-to-cache.png")  
+       p
+         a.credits(href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/", target="_blank")
+            | Image from Jake Archibald`s offline cookbook

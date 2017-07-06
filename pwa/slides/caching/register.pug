@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'service-workers-registeration'
+
+block title
+        | Service Worker Registeration
+block content       
+       pre
+        code.JavaScript  
+            | if ('serviceWorker' in navigator) {
+            |     navigator.serviceWorker.register('/sw.js')
+            |      .then(function(registration) {
+            |        // Registration was successful 
+            |        console.log('Registration successful with scope:', registration.scope);
+            |       }).catch(function(err) {
+            |        // Registration failed 
+            |       console.log('ServiceWorker registration failed:', err);
+            |     });
+            | }
+       p
+         a.credits(href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers", target="_blank")
+            | Code from Google Web Fundamentals  

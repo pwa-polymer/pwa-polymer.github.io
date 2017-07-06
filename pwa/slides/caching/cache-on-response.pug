@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'service-workers-caching-on-network-response'
+
+block title
+        |  Caching On Network Response
+block content       
+       pre
+        code.JavaScript  
+            |self.addEventListener('fetch', function(event) {
+            |    event.respondWith(
+            |        caches.open('mysite-dynamic').then(function(cache) {
+            |           return cache.match(event.request).then(function (response) {
+            |              return response || fetch(event.request).then(function(response) {
+            |                   cache.put(event.request, response.clone());
+            |                   return response;
+            |                 });
+            |             });
+            |         })
+            |     );
+            | });
+       p
+         a.credits(href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers", target="_blank")
+            | Code from Google Web Fundamentals  

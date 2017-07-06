@@ -1,0 +1,135 @@
+doctype html
+html
+  head
+    title Introduction to PWA
+    meta(charset='utf-8')
+    meta(name='author', content=' Marek Matczak, Paweł Kamiński, Bartek Pietrowski, Tomek Szewców')
+    meta(name='description', content='WKS 2017 Traning')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+   
+
+ 
+    link(href='reveal.js-3.3.0/css/reveal.css', rel='stylesheet')
+    link(href='reveal.js-3.3.0/css/theme/black.css', rel='stylesheet')
+    link(href='common/css/common.css', rel='stylesheet')
+    link(href='style.css', rel='stylesheet')
+    <!-- Theme used for syntax highlighting of code -->
+    link(href='reveal.js-3.3.0/lib/css/zenburn.css', rel='stylesheet')
+    //- Printing and PDF exports -->
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.3.0/css/print/pdf.css' : 'reveal.js-3.3.0/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    
+   
+ 
+-var counter = 0
+  body
+    .reveal
+      .slides        
+        include ./slides/title.pug
+        include ./slides/agenda.pug       
+
+        include ./slides/introduction/current-state.pug
+        include ./slides/introduction/2017.pug
+        include ./slides/introduction/pwa.pug
+        include ./slides/introduction/why-should-we-care.pug
+        include ./slides/introduction/pwa-components.pug
+        include ./slides/introduction/pwa-sw.pug
+        include ./slides/introduction/pwa-manifest.pug
+        include ./slides/introduction/pwa-app-shell.pug
+        include ./slides/introduction/pwa-summary.pug
+        include ./slides/introduction/pwa-example.pug
+
+
+        include ./slides/sw/sw-in-details.pug
+        include ./slides/sw/workers.pug
+        include ./slides/sw/workers-code.pug
+        include ./slides/sw/workers-can.pug
+        include ./slides/sw/workers-cannot.pug
+        include ./slides/sw/service-workers.pug
+        include ./slides/sw/sw-can-i-use.pug
+        include ./slides/sw/is-sw-ready.pug
+        
+
+        include ./slides/caching/lifecycle.pug
+        include ./slides/caching/register.pug
+        include ./slides/caching/installation.pug
+        include ./slides/caching/cache-static.pug
+        include ./slides/caching/cache-static-schema.pug
+        include ./slides/caching/fetch.pug
+        include ./slides/caching/cache-first.pug
+        include ./slides/caching/cache-on-response.pug
+        include ./slides/caching/network-first.pug 
+        include ./slides/caching/cache-first.pug 
+        include ./slides/caching/race.pug       
+        include ./slides/caching/cache-only.pug 
+        include ./slides/caching/network-only.pug 
+        include ./slides/caching/caching-strategies.pug 
+
+        include ./slides/data/data.pug 
+        include ./slides/data/cookies.pug 
+        include ./slides/data/html5-storage.pug 
+        include ./slides/data/websql.pug 
+        include ./slides/data/indexedDB.pug 
+        include ./slides/data/file-api.pug 
+
+
+        include ./slides/notifications/notification.pug 
+        include ./slides/notifications/engaging.pug         
+        include ./slides/notifications/how-does-it-work-client.pug 
+        include ./slides/notifications/how-does-it-work-server.pug 
+        include ./slides/notifications/how-does-it-work-browser.pug        
+        include ./slides/notifications/subscribe.pug 
+        include ./slides/notifications/subscription-obj.pug 
+        include ./slides/notifications/show-notification.pug 
+        include ./slides/notifications/notification-schema.pug 
+        include ./slides/notifications/notification-types.pug 
+        include ./slides/notifications/demo.pug 
+         
+
+        include ./slides/tools/tools.pug
+        include ./slides/tools/chrome-dev-tools.pug 
+        include ./slides/tools/chrome-dev-tools-manifest.pug
+        include ./slides/tools/chrome-dev-tools-sw.pug        
+        include ./slides/tools/chrome-dev-tools-storage.pug
+        include ./slides/tools/chrome-dev-tools-cache.pug
+        include ./slides/tools/lighthouse.pug 
+        include ./slides/tools/lighthouse-raport-pwa.pug
+        include ./slides/tools/lighthouse-raport-performance.pug
+        include ./slides/tools/lighthouse-raport-access.pug        
+        include ./slides/tools/sw-toolbox.pug 
+        include ./slides/tools/sw-toolbox-code.pug 
+        include ./slides/tools/sw-precache.pug 
+        include ./slides/tools/sw-precache-code.pug
+        include ./slides/tools/and-many-more.pug 
+
+
+        include ./slides/end.pug 
+
+     
+    script(src='reveal.js-3.3.0/lib/js/head.min.js')
+    script(src='reveal.js-3.3.0/js/reveal.js')
+
+    script.
+      Reveal.initialize({
+       // controls: true,
+      //  progress: true,
+        history: true,
+      //  center: true,
+      //  rollingLinks: true,
+     //   transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Syntax highlight for <code> elements
+            {src: 'reveal.js-3.3.0/plugin/markdown/marked.js'},
+            {src: 'reveal.js-3.3.0/plugin/markdown/markdown.js'},
+            {src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true},
+            { src: 'reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },         
+        ]
+      });
+     
+

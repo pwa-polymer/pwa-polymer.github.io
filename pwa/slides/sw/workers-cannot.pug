@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'workers-cannot'
+
+block title
+        | Workers do NOT have access to:
+block content    
+            
+        ul
+          li
+             |The DOM (it's not thread-safe)
+          li
+             |The window object
+          li
+             |The document object
+          li
+             |The parent object
+          li
+             |will not run locally (e.g. from file://)

@@ -1,0 +1,31 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'workers-code'
+
+block title
+        |  worker example
+block content    
+     p 
+       | main.js
+     pre
+       code.JavaScript     
+          | var worker = new Worker('task.js');
+          |     worker.addEventListener('message', function(e) {
+          |     console.log('Worker said: ', e.data);
+          |     }, false);
+          |
+          |     worker.addEventListener('error', function(e){
+          |     console.log('ERROR: Line', e.lineno, 'in', 
+          |       e.filename, ':', e.message);
+          |     }, false);
+          |
+          |     worker.postMessage('Hello World'); // Send data to our worker.
+     p
+      | task.js 
+
+     pre
+       code.JavaScript     
+          | self.addEventListener('message', function(e) {
+          |         self.postMessage(e.data);
+          |      }, false);     

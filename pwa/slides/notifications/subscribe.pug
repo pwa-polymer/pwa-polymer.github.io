@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'subscribe'
+
+block title
+        |  Subscribe
+block content       
+       pre
+        code.JavaScript  
+          |navigator.serviceWorker.register('sw.js')
+          |      .then(function(swReg){               
+          |	        swRegistration.pushManager.subscribe({
+          |                           userVisibleOnly: true, 
+          |                           applicationServerKey: PUBLIC_KEY})
+          |      .then(function(subscription){                   	
+          |		        console.log('User successfully subscribed');          
+          |		        fetch('/registerSubscription', {
+          |               method: 'POST',
+          |               headers: { 'Content-Type': 'application/json' },
+          |               body: JSON.stringify({
+          |                 subscription: SUBSCRIPTION_OBJ,
+          |              })
+          |        });          

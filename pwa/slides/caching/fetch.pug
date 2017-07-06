@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'service-workers-fetching-static-files'
+
+block title
+        |  Fetching Static Files
+block content       
+       pre
+        code.JavaScript  
+           | self.addEventListener('fetch', function(event) {
+           |     event.respondWith(
+           |       caches.open('mysite-static-v3').then(function(cache) {
+           |         cache.match(event.request)
+           |            .then(function(response) {
+           |               return response || fetch(event.request)           
+           |           })
+           |        );                   
+           |     });
+           | });
+       p
+         a.credits(href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/", target="_blank")
+            | Code based on Jake Archibald`s offline cookbook

@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'notification-demo'
+
+block title
+        |  Demo
+block content           
+      p.credits
+            | Demo was created by  Mietek Suska and Mathias Kegelmann
+      ul   
+         li.fragment
+           a(href="https://pwa-push-demo2.azurewebsites.net/", target="_blank")
+            | Client
+         li.fragment
+           a(href="https://pwa-push-demo2.azurewebsites.net/web_app/index.html", target="_blank")
+            | Server
+         li.fragment
+           a(href="https://github.com/apps-evolve-summit/pwa-push-demo", target="_blank")
+            | Github   
+         

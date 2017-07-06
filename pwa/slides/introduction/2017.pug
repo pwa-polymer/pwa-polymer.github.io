@@ -1,0 +1,31 @@
+extends ../layout.pug
+
+block vars
+  -var title = '2017-not-enough'
+
+block title
+        | in 2017 it's not enough...
+
+block content 
+    table 
+        tr
+            td.fragment
+                h4 We want to web apps that 
+                ul
+                    li always work despite of conectivity
+                        br 
+                        | status
+                    li reduce loading time
+                    li are proactive        
+            td.fragment
+                h4 in marketing jargon
+                ul            
+                    li Reliable                                          
+                    li Fast 
+                    li Engaging 
+
+
+    div.fragment
+       img(src="img/offline.png")  
+       img(src="img/fast.png")                      
+       img(src="img/engaging.png")           

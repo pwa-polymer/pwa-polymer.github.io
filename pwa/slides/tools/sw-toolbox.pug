@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'sw-toolbox'
+
+block title
+        |  SW-toolbox
+block content    
+         
+         p
+           a(href="https://github.com/GoogleChrome/sw-toolbox", target="_blank")
+            | Github
+         ul 
+          li.fragment
+            | A collection of service worker tools for offlining runtime requests
+          li.fragment
+            | runtime tool                            
+          li.fragment
+            | Provides predefined cache strategies
+          li.fragment
+            | Allows adding new cache strategies

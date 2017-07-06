@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'indexeddb'
+
+block title
+        | IndexedDB 
+block content          
+    ul
+        li.fragment 
+            | Asynchronous (event-based)
+        li.fragment 
+            | Size limit : 10~20% of avaiable space
+        li.fragment 
+            | Supported by Service Workers
+        li.fragment 
+            | Complex Data Objects, Indexes, transactions, cursors            
+        li.fragment
+            | "Worst API ever design in a history of computer science"            
+            | Jake Archibald at 
+            a(href="https://youtu.be/cmGr0RszHc8?t=1924")  Building offline-first PWA - Google I/O 2016
+        li.fragment
+            | Promise based wrappers localForage, idb, PouchDB 

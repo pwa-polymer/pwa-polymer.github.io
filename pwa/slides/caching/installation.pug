@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'service-workers-installation'
+
+block title
+        | Service Worker Installation
+block content       
+       pre
+        code.JavaScript  
+            | self.addEventListener('install', function(event) {
+            | // Perform install steps
+            | });
+       p
+         a.credits(href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers", target="_blank")
+            | Code from Google Web Fundamentals  

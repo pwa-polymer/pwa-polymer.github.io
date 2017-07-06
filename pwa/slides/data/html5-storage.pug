@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'html5-storage'
+
+block title
+        | HTML5 Storage   
+block content 
+    h2  
+    p Local/Session storage
+    ul
+        li.fragment
+            | Widely supported
+        li.fragment 
+            | Synchronous
+        li.fragment 
+            | Size limit : 2,5 ~5 MB
+        li.fragment 
+            | Strings only
+        li.fragment 
+            | Unstructured data      
+        li.fragment  
+            | lives in document object -> inaccessible for service worker

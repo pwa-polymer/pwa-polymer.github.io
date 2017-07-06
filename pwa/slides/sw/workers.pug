@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'workers'
+
+block title
+        |  Workers
+block content    
+       
+        ul
+          li
+            |Isolated thread
+          li
+            |Code contained in separate file (async download)
+          li
+            |Communication via message passing - postMessage()
+          li
+            |Messages copied, not shared
+          li
+            |Same Origin
+          

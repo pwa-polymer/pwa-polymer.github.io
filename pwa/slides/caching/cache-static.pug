@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'service-workers-caching-static-files'
+
+block title
+        |  Caching Static Files
+block content       
+       pre
+        code.JavaScript  
+            | self.addEventListener('install', function(event) {
+            |   event.waitUntil(
+            |     caches.open('mysite-static-v3').then(function(cache) {
+            |       return cache.addAll([
+            |         '/css/whatever-v3.css',
+            |         '/css/imgs/sprites-v6.png',
+            |         '/css/fonts/whatever-v8.woff',
+            |         '/js/all-min-v4.js'
+            |         // etc
+            |       ]);
+            |     })
+            |   );
+            | });
+       p
+         a.credits(href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers", target="_blank")
+            | Code from Google Web Fundamentals  

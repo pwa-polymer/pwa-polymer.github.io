@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'app-shell'
+
+block title
+        |  App shell
+block content     
+   p.just
+    | An application shell (or app shell) architecture is one way to build a Progressive Web App that reliably and instantly loads on your users' screens, similar to what you see in native applications.
+   p.just
+    | The app "shell" is the minimal HTML, CSS and JavaScript required to power the user interface and when cached offline can ensure instant, reliably good performance to users on repeat visits. This means the application shell is not loaded from the network every time the user visits. Only the necessary content is needed from the network.
+   span.small
+        a(href="https://developers.google.com/web/fundamentals/architecture/app-shell") Developers Google     
+

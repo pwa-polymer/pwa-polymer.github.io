@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'sw-toolbox-code'
+
+block title
+        |  SW-toolbox
+block content                
+            pre
+              code.JavaScript                               
+                  |
+                  | toolbox.router.get('/news', toolbox.networkFirst, {
+                  |     cache: {
+                  |         name: 'news'
+                  |     }
+                  | });               
+            pre
+              code.JavaScript  
+                  | toolbox.router.get('/(google*)', global.toolbox.cacheFirst, {
+                  |     cache: {
+                  |       name: 'googleapis',
+                  |       maxEntries: 10,
+                  |       maxAgeSeconds: 86400
+                  |     },
+                  |     origin: /\.googleapis\.com$/
+                  |   });      

@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'Lighthouse'
+
+block title
+        |  Lighthouse
+block content       
+                
+      p
+            a(href="https://developers.google.com/web/tools/lighthouse/", target="_blank")
+              img(src="img/pwa-lighthouse.png")  
+      ul
+         li.fragment            
+              | Chrome plugin or cmd line tool
+         li.fragment
+              | Perform static as well as runtime analyze
+         li.fragment
+              | Check best practices Performance and Accessiblity related to Progressive Web Apps
+         

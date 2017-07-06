@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'workers-can'
+
+block title
+        |  Features Available to Workers
+block content    
+      
+        ul
+          li
+            | The navigator object
+          li
+            |The location object (read-only)
+          li
+            |XMLHttpRequest
+          li
+            |setTimeout()/clearTimeout() and setInterval()/clearInterval()
+          li
+            |The Application Cache
+          li
+            |Importing external scripts using the importScripts() method
+          li
+            |Spawning other web workers

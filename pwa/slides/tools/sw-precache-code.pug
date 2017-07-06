@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'sw-precache-code'
+
+block title
+        |  SW-precache
+block content    
+            pre
+              code.JavaScript  
+                  | workboxSW.precache([
+                  |   {
+                  |     "url": "/rev/js/app-dbf8692027.js",
+                  |     "revision": "dbf8692027bc45c0716e99ce79b5c37f"
+                  |   },
+                  |   ...
+                  |   {
+                  |     "url": "/images/icon.png",
+                  |     "revision": "a10e1fffc6618c914c42a754f3e713af"
+                  |   },
+                  |   {
+                  |     "url": "/app-shell",
+                  |     "revision": "2b927fa96213157612381879d94baf6a"
+                  |   }
+                  | ]);

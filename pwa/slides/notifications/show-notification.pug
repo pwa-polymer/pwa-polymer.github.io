@@ -1,0 +1,22 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'show-notification'
+
+block title
+        |  Showing notification
+block content       
+       pre
+        code.JavaScript  
+          | self.addEventListener('push', function(event) {
+          |     var  data = event.data.json();
+          |     event.waitUntil(   
+          |        self.registration.showNotification(data.title, {
+          |          body: data.body,
+          |          icon: data.icon,
+          |          vibrate: data.vibrate,
+          |          actions: data.actions,
+          |          requireInteraction: data.requireInteraction
+          |       })
+          |    );
+          | });

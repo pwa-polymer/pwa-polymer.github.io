@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'cookies'
+
+block title
+        | Cookies
+block content       
+          ul
+            li.fragment
+              | Widely supported
+            li.fragment 
+              | Synchronous
+            li.fragment 
+              | Size limit: 4KB
+            li.fragment 
+              | Strings only
+            li.fragment 
+              | lives in document object -> inaccessible for service worker
+            li.fragment 
+              | Cleared very often                
