@@ -10,11 +10,36 @@ html
 
  
     link(href='reveal.js-3.3.0/css/reveal.css', rel='stylesheet')
-    link(href='reveal.js-3.3.0/css/theme/black.css', rel='stylesheet')
+    link(href='reveal.js-3.3.0/css/theme/white.css', rel='stylesheet')
     link(href='common/css/common.css', rel='stylesheet')
     link(href='style.css', rel='stylesheet')
     <!-- Theme used for syntax highlighting of code -->
     link(href='reveal.js-3.3.0/lib/css/zenburn.css', rel='stylesheet')
+
+    style(type="text/css").
+      .reveal section::before {
+          height: inherit !important;
+          width: inherit !important;
+      }
+
+      .reveal section::after {
+          box-shadow: none !important;
+      }
+
+      .reveal section img.plain {
+          background: white;
+          border: none;
+          box-shadow: none;
+      }
+
+      .reveal section .middle {
+          vertical-align: middle;
+      }
+
+      .reveal ul.no-bullets {
+          list-style-type: none;
+      }
+
     //- Printing and PDF exports -->
     script.
       var link = document.createElement( 'link' );
@@ -104,7 +129,15 @@ html
         include ./slides/tools/sw-toolbox-code.pug 
         include ./slides/tools/sw-precache.pug 
         include ./slides/tools/sw-precache-code.pug
+        include ./slides/tools/workbox.pug
+        include ./slides/tools/workbox-modules.pug
         include ./slides/tools/and-many-more.pug 
+
+
+        include ./slides/prpl.pug 
+        include ./slides/hnpwa.pug 
+        include ./slides/routes-split.pug 
+        include ./slides/ssr.pug 
 
 
         include ./slides/end.pug 
@@ -125,6 +158,7 @@ html
         //- height: 1.0,
         dependencies: [
           // Syntax highlight for <code> elements
+            {src: 'reveal.js-3.3.0/plugin/zoom-js/zoom.js'},
             {src: 'reveal.js-3.3.0/plugin/markdown/marked.js'},
             {src: 'reveal.js-3.3.0/plugin/markdown/markdown.js'},
             {src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true},

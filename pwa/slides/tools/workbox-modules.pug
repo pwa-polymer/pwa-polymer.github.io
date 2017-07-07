@@ -1,0 +1,22 @@
+extends ../layout.pug
+
+block vars
+  -var title = 'workbox'
+
+block title
+        a(href="https://workboxjs.org/examples/", target="_blank")
+          | Workbox
+          | modules
+block content           
+      ul   
+         li
+            | workbox-broadcast-cache-update
+         li
+            | workbox-cache-expiration  
+         li
+            | workbox-routing
+         li
+            | workbox-runtime-caching
+         li
+            | workbox-google-analytics
+         

@@ -7,10 +7,35 @@
     <meta name="description" content="WKS 2017 Traning">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link href="reveal.js-3.3.0/css/reveal.css" rel="stylesheet">
-    <link href="reveal.js-3.3.0/css/theme/black.css" rel="stylesheet">
+    <link href="reveal.js-3.3.0/css/theme/white.css" rel="stylesheet">
     <link href="common/css/common.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet"><!-- Theme used for syntax highlighting of code -->
     <link href="reveal.js-3.3.0/lib/css/zenburn.css" rel="stylesheet">
+    <style type="text/css">
+      .reveal section::before {
+          height: inherit !important;
+          width: inherit !important;
+      }
+      
+      .reveal section::after {
+          box-shadow: none !important;
+      }
+      
+      .reveal section img.plain {
+          background: white;
+          border: none;
+          box-shadow: none;
+      }
+      
+      .reveal section .middle {
+          vertical-align: middle;
+      }
+      
+      .reveal ul.no-bullets {
+          list-style-type: none;
+      }
+      
+    </style>
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
@@ -168,8 +193,8 @@
       </section>
       <section id="11-pwa-example" data-transition="slide">
         <h2> Example</h2>
-        <body><img src="img/pwagif.gif" height="450px">
-          <p class="quote">taken from  <a href="https://developer.mozilla.org/en-US/Apps/Progressive">gossiplus.com    </a></p>
+        <body><img class="plain" src="img/pwagif.gif" height="500px">
+          <p class="quote" style="margin:0;">taken from  <a href="">Google Web Fundamentals    </a></p>
         </body>
       </section>
       <section id="12-sw-in-details" data-transition="slide">
@@ -264,7 +289,7 @@
       </section>
       <section id="20-service-workers-life-cycle" data-transition="slide">
         <h2>Service Worker Life Cycle </h2>
-        <body><img src="img/sw-lifecycle.png">
+        <body><img class="plain" src="img/sw-lifecycle.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" target="_blank">Image from Google Web Fundamentals</a></p>
         </body>
       </section>
@@ -314,7 +339,7 @@
       </section>
       <section id="24-service-workers-caching-static-files-schema" data-transition="slide">
         <h2> Caching Static Files</h2>
-        <body><img src="img/on-install-dep.png">
+        <body><img class="plain" src="img/on-install-dep.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
@@ -336,7 +361,7 @@
       </section>
       <section id="26-cache-first" data-transition="slide">
         <h2> Cache First</h2>
-        <body><img src="img/cache-falling-back-to-network.png">
+        <body><img class="plain" src="img/cache-falling-back-to-network.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
@@ -360,38 +385,38 @@
       </section>
       <section id="28-network-first" data-transition="slide">
         <h2> Network first</h2>
-        <body><img src="img/network-falling-back-to-cache.png">
+        <body><img class="plain" src="img/network-falling-back-to-cache.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
       <section id="29-cache-first" data-transition="slide">
         <h2> Cache First</h2>
-        <body><img src="img/cache-falling-back-to-network.png">
+        <body><img class="plain" src="img/cache-falling-back-to-network.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
       <section id="30-race" data-transition="slide">
         <h2> Race Cache and Network</h2>
-        <body><img src="img/cache-and-network-race.png">
+        <body><img class="plain" src="img/cache-and-network-race.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
       <section id="31-cache-only" data-transition="slide">
         <h2> Cache only</h2>
-        <body><img src="img/cache-only.png">
+        <body><img class="plain" src="img/cache-only.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
       <section id="32-network-only" data-transition="slide">
         <h2> Network only</h2>
-        <body><img src="img/network-only.png">
+        <body><img class="plain" src="img/network-only.png">
           <p><a class="credits" href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank">Image from Jake Archibald`s offline cookbook</a></p>
         </body>
       </section>
       <section id="33-sw-caching-strategies" data-transition="slide">
         <h2> Caching strategies</h2>
         <body>
-          <div class="bgImages">     <img src="img/on-push.png"><img src="img/on-activate.png"><img src="img/on-install-dep.png"><img src="img/on-install-not.png"><img src="img/ss-cache-then-network.png"><img src="img/sw-side-templating.png"><img src="img/generic-fallback.png"><img src="img/stale-while-revalidate.png"><img src="img/on-network-response.png"><img src="img/cache-falling-back-to-network.png"><img src="img/network-falling-back-to-cache.png"><img src="img/network-only.png"><img src="img/on-bg-sync.png"><img src="img/cache-only.png"><img src="img/on-user-interaction.png"><img src="img/on-push.png"></div>
+          <div class="bgImages">     <img class="plain" src="img/on-push.png"><img class="plain" src="img/on-activate.png"><img class="plain" src="img/on-install-dep.png"><img class="plain" src="img/on-install-not.png"><img class="plain" src="img/ss-cache-then-network.png"><img class="plain" src="img/sw-side-templating.png"><img class="plain" src="img/generic-fallback.png"><img class="plain" src="img/stale-while-revalidate.png"><img class="plain" src="img/on-network-response.png"><img class="plain" src="img/cache-falling-back-to-network.png"><img class="plain" src="img/network-falling-back-to-cache.png"><img class="plain" src="img/network-only.png"><img class="plain" src="img/on-bg-sync.png"><img class="plain" src="img/cache-only.png"><img class="plain" src="img/on-user-interaction.png"><img class="plain" src="img/on-push.png"></div>
           <div class="overlay fragment">
             <ul>
               <li>There are many caching strategies</li>
@@ -405,7 +430,7 @@
       <section id="34-data" data-transition="slide">
         <h2> </h2>
         <body>
-          <h2>Now lets talk about...<br>... data storage</h2>
+          <h2>Now lets talk about...<br>...data storage</h2>
         </body>
       </section>
       <section id="35-cookies" data-transition="slide">
@@ -496,13 +521,13 @@
       </section>
       <section id="40-notification" data-transition="slide">
         <h2>Notification</h2>
-        <body><img src="img/notifications.png"></body>
+        <body><img class="plain" src="img/notifications.png"></body>
       </section>
       <section id="41-engaging" data-transition="slide">
         <h2> Engaging  </h2>
         <body>
           <ul class="no-bullet">
-            <li class="no-bullet"> <img src="img/engaging.png"></li>
+            <li class="no-bullet"> <img class="plain" src="img/engaging.png"></li>
             <li>Web Push Protocol</li>
             <li>Service Workers</li>
           </ul>
@@ -510,15 +535,15 @@
       </section>
       <section id="42-how-does-it-work-client" data-transition="slide">
         <h2>How does it work?</h2>
-        <body><img src="img/notification-subscribe.png"></body>
+        <body><img class="plain" src="img/notification-subscribe.png"></body>
       </section>
       <section id="43-how-does-it-work-server" data-transition="slide">
         <h2>How does it work?</h2>
-        <body><img src="img/notification-server.png"></body>
+        <body><img class="plain" src="img/notification-server.png"></body>
       </section>
       <section id="44-how-does-it-work-browser" data-transition="slide">
         <h2>How does it work?</h2>
-        <body><img src="img/notification-browser.png"></body>
+        <body><img class="plain" src="img/notification-browser.png"></body>
       </section>
       <section id="45-subscribe" data-transition="slide">
         <h2> Subscribe</h2>
@@ -541,7 +566,7 @@
       </section>
       <section id="46-subscribe-obj" data-transition="slide">
         <h2> Subscribtion object</h2>
-        <body><img src="img/notification-subscription-obj.png"></body>
+        <body><img class="plain" src="img/notification-subscription-obj.png"></body>
       </section>
       <section id="47-show-notification" data-transition="slide">
         <h2> Showing notification</h2>
@@ -562,7 +587,7 @@
       </section>
       <section id="48-notification-schema" data-transition="slide">
         <h2>Notification schema</h2>
-        <body><img src="img/notification-schema.png"></body>
+        <body><img class="plain" src="img/notification-schema.png"></body>
       </section>
       <section id="49-notification-types" data-transition="slide">
         <h2>Notification types</h2>
@@ -618,7 +643,7 @@
       <section id="57-Lighthouse" data-transition="slide">
         <h2> Lighthouse</h2>
         <body>
-          <p><a href="https://developers.google.com/web/tools/lighthouse/" target="_blank"><img src="img/pwa-lighthouse.png"></a></p>
+          <p><a href="https://developers.google.com/web/tools/lighthouse/" target="_blank"><img class="plain" src="img/pwa-lighthouse.png"></a></p>
           <ul>
             <li class="fragment">
                          Chrome plugin or cmd line tool</li>
@@ -629,15 +654,15 @@
       </section>
       <section id="58-Lighthouse-raport-pwa" data-transition="slide">
         <h2> Lighthouse</h2>
-        <body><img src="img/lh-pwa.png"></body>
+        <body><img class="plain" src="img/lh-pwa.png"></body>
       </section>
       <section id="59-Lighthouse-raport-performance" data-transition="slide">
         <h2> Lighthouse</h2>
-        <body><img src="img/lh-per.png"></body>
+        <body><img class="plain" src="img/lh-per.png"></body>
       </section>
       <section id="60-Lighthouse-raport-accessibility" data-transition="slide">
         <h2> Lighthouse</h2>
-        <body><img src="img/lh-access.PNG"></body>
+        <body><img class="plain" src="img/lh-access.PNG"></body>
       </section>
       <section id="61-sw-toolbox" data-transition="slide">
         <h2> SW-toolbox</h2>
@@ -702,17 +727,82 @@ toolbox.router.get('/news', toolbox.networkFirst, {
 ]);</code></pre>
         </body>
       </section>
-      <section id="65-more-tools" data-transition="slide">
+      <section id="65-workbox" data-transition="slide">
+        <h2> New kind on the block - <a href="https://workboxjs.org/" target="_blank">Workbox</a></h2>
+        <body>
+          <ul>  
+            <li>The next version of sw-precache & sw-toolbox </li>
+            <li>Focus on modularity - smaller, standalone modules  </li>
+            <li>Cross-browser compatible  </li>
+            <li>Easy to integrate in build process + cli available</li>
+          </ul>
+        </body>
+      </section>
+      <section id="66-workbox" data-transition="slide">
+        <h2><a href="https://workboxjs.org/examples/" target="_blank">
+            Workbox
+            modules</a></h2>
+        <body>
+          <ul>  
+            <li>workbox-broadcast-cache-update</li>
+            <li>workbox-cache-expiration  </li>
+            <li>workbox-routing</li>
+            <li>workbox-runtime-caching</li>
+            <li>workbox-google-analytics</li>
+          </ul>
+        </body>
+      </section>
+      <section id="67-more-tools" data-transition="slide">
         <h2> and many more tools like</h2>
         <body>
           <ul>  
             <li class="fragment"><a href="https://app-manifest.firebaseapp.com/" target="_blank">Manifest generator </a></li>
             <li class="fragment"><a href="https://www.npmjs.com/package/sw-offline-google-analytics" target="_blank">Offline Google Analitics</a></li>
-            <li class="fragment"><a href="https://workboxjs.org/#get-started" target="_blank">Workboxjs   </a></li>
           </ul>
         </body>
       </section>
-      <section id="66-end" data-transition="slide">
+      <section id="68-is-sw-ready" data-transition="slide">
+        <h2>PRPL pattern</h2>
+        <body>
+          <ul>  
+            <li>PUSH - critical resources for the initial URL route</li>
+            <li>RENDER - only initial route   </li>
+            <li>PRE-CACHE - remaining routes</li>
+            <li>LAZY-LOAD - and create remaining routes on demand</li>
+          </ul>
+        </body>
+      </section>
+      <section id="69-is-sw-ready" data-transition="slide">
+        <h2><a href="https://hnpwa.com/" target="_blank">Hacker News PWA</a></h2>
+        <body>
+          <ul>
+            <li>A spiritual successor to TodoMVC</li>
+            <li>Each implementation is a complete Progressive Web App</li>
+            <li>Different frameworks</li>
+            <li>Different performance patterns and tools</li>
+          </ul>
+        </body>
+      </section>
+      <section id="70-is-sw-ready" data-transition="slide">
+        <h2><a href="https://gist.github.com/addyosmani/44678d476b8843fd981ff8011d389724" target="_blank">Routes splitting</a></h2>
+        <body>
+          <ul>
+            <li><a href="https://medium.com/@adamrackis/vendor-and-code-splitting-in-webpack-2-6376358f1923" target="_blank">Tools  </a></li>
+            <li>But also you need to <a href="https://github.com/webpack/webpack/issues/4636" target="_blank">watch  </a><a href="https://github.com/webpack/webpack/issues/4716" target="_blank">out</a></li>
+          </ul>
+        </body>
+      </section>
+      <section id="71-is-sw-ready" data-transition="slide">
+        <h2>Server side</h2>
+        <body>
+          <ul>
+            <li>Server side rendering? Uncanny valley vs. SEO</li>
+            <li>Avoid setting TTL/ETag headers to cache service worker! </li>
+            <li>And double check your hosting service defaults :P </li>
+          </ul>
+        </body>
+      </section>
+      <section id="72-end" data-transition="slide">
         <h2></h2>
         <body><img src="img/theend.png"></body>
       </section>
@@ -732,6 +822,7 @@ toolbox.router.get('/news', toolbox.networkFirst, {
        //- height: 1.0,
        dependencies: [
          // Syntax highlight for <code> elements
+           {src: 'reveal.js-3.3.0/plugin/zoom-js/zoom.js'},
            {src: 'reveal.js-3.3.0/plugin/markdown/marked.js'},
            {src: 'reveal.js-3.3.0/plugin/markdown/markdown.js'},
            {src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true},

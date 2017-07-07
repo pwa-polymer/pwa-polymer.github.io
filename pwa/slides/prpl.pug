@@ -1,0 +1,19 @@
+extends ./layout.pug
+block vars
+  -var title = 'is-sw-ready'
+
+block title
+        | PRPL pattern
+block content       
+    ul   
+        li
+          | PUSH - critical resources for the initial URL route
+        li
+          | RENDER - only initial route   
+        li
+          | PRE-CACHE - remaining routes
+        li
+          | LAZY-LOAD - and create remaining routes on demand
+  
+        
+    

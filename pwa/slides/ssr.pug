@@ -1,0 +1,14 @@
+extends ./layout.pug
+block vars
+  -var title = 'is-sw-ready'
+
+block title
+          | Server side
+block content       
+        ul
+          li
+            | Server side rendering? Uncanny valley vs. SEO
+          li
+            | Avoid setting TTL/ETag headers to cache service worker! 
+          li
+            | And double check your hosting service defaults :P 
